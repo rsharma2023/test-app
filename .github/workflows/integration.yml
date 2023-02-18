@@ -1,5 +1,6 @@
 name: Build Next.js web application
-on: push
+on: 
+  push:
     tags:
       - 'v*'
 jobs:
