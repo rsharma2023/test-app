@@ -13,7 +13,7 @@ jobs:
     - name: View content of artifact
       run: ls -R
     - name: Archive site contents
-      uses: actions/zip-release@master
+      uses: thedoctor0/zip-release@master
       with:
         filename: site.zip
   build-project:
