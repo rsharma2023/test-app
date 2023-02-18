@@ -1,5 +1,7 @@
 name: Build Next.js web application
 on: push
+    tags:
+      - 'v*'
 jobs:
   release-project:
     name: Release project
@@ -17,15 +19,12 @@ jobs:
       with:
         filename: site.zip
     - name: Create release
-      uses: "marvinpinto/action-automatic-releases@latest"
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
-        prerelease: true
-        title: "Development Build"
-        files: |
-            LICENSE.txt
-            *.jar
+        tag_name: ${{ github.run_number }}
+        release_name: Release ${{ github.run_number }}
   build-project:
     name: Build project
     runs-on: ubuntu-latest
