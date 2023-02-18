@@ -17,11 +17,10 @@ jobs:
       with:
         filename: site.zip
     - name: Create release
-      uses: elgohr/Github-Release-Action@v4
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        title: Release ${{ github.run_number }}
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
   build-project:
     name: Build project
     runs-on: ubuntu-latest
