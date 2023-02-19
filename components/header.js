@@ -5,6 +5,6 @@ const Header = () =>
         <title>
             Contoso Spaces
         </title>
-    ;
+    </Head>;
 
 export default Header

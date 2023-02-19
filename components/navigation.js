@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'google.com'
 
 const Navigation = () =>
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
