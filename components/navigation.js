@@ -22,7 +22,7 @@ const Navigation = () =>
                         </a>
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className="item">
                     <Link href="/locations">
                         <a className="nav-link">
                             Locations
