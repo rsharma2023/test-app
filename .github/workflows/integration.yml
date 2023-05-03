@@ -1,9 +1,9 @@
 name: Build Next.js web application
 on: 
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 jobs:
   build-project:
     name: Build project
