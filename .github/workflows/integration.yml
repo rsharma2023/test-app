@@ -1,9 +1,7 @@
 name: Build Next.js web application
 on: 
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+ workflow_dispatch:
+ 
 jobs:
   build-project:
     name: Build project
