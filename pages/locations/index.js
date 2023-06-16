@@ -20,7 +20,7 @@ const Index = ({ locationGroups }) =>
         </section>
     </Layout>;
 
-const getLocation = (location) =>
+const get_Location = (location) =>
     <>
         <img src={'/img/' + location.image} className="card-img-top" alt="{location.name}" /> 
         <div className="card-body">
@@ -30,7 +30,7 @@ const getLocation = (location) =>
             <div className="card-text my-2">
                 <Board location={location} />
             </div>
-            <p className="card-text">
+            <p class_Name="card-text">
                 <small className="text-muted">
                     {location.mailingAddress}
                 </small>
