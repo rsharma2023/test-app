@@ -14,11 +14,7 @@ name: "CodeQL"
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "develop" ]
-  schedule:
-    - cron: '44 19 * * 5'
+
 
 jobs:
   analyze:
@@ -74,3 +70,13 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
+    - name: CSV export
+      uses: advanced-security/ghas-to-csv@v2
+      #env:
+      #    GITHUB_PAT: ${{ secrets.PAT }}  # you need to set a PAT
+    - name: Upload CSV
+      uses: actions/upload-artifact@v3
+      with:
+          name: ghas-data
+          path: ${{ github.workspace }}/*.csv
+          if-no-files-found: error
